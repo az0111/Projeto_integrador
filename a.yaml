@@ -38,7 +38,7 @@ esp32_ble_tracker:
   max_connections: 3
 
   # binary_sensor - Plataforma que permite rastrear a presença de um dispositivo BLE [12].
-  binary_sensor:
+binary_sensor:
     # Exemplo de rastreamento de presença baseado no endereço MAC do seu celular.
     # Esta é a forma mais comum se o seu celular não randomizar o MAC.
     - platform: ble_presence
@@ -80,7 +80,7 @@ esp32_ble_tracker:
     #   timeout: 30s
 
   # sensor - Você pode adicionar sensores adicionais para coletar dados específicos, como o RSSI [13].
-  sensor:
+sensor:
     # Este sensor reportará o valor RSSI (força do sinal) do seu celular.
     - platform: ble_rssi
       # mac_address: Substitua pelo ENDEREÇO MAC REAL do seu celular [13].
@@ -91,4 +91,4 @@ esp32_ble_tracker:
 
     # Example configuration.yaml entry
 #device_tracker:
- # - platform: bluetooth_tracker
+ #- platform: bluetooth_tracker
