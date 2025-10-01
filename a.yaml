@@ -38,22 +38,30 @@ esp32_ble_tracker:
   max_connections: 3
 
   # binary_sensor - Plataforma que permite rastrear a presença de um dispositivo BLE [12].
-binary_sensor:
+#binary_sensor:
     # Exemplo de rastreamento de presença baseado no endereço MAC do seu celular.
     # Esta é a forma mais comum se o seu celular não randomizar o MAC.
-    - platform: ble_presence
+    #- platform: ble_presence
       # mac_address (Obrigatório, se não usar irk, service_uuid ou ibeacon_uuid):
       # Substitua 'XX:XX:XX:XX:XX:XX' pelo ENDEREÇO MAC REAL do seu celular que você encontrou nos logs [1, 9].
-      mac_address: 68:25:DD:47:C3:B4
+    #  mac_address: 68:25:DD:47:C3:B4
       # name: Nome amigável para este sensor no Home Assistant ou logs [1].
-      name: "Celular MIO BLE"
+    #  name: "Celular MIO BLE"
       # min_rssi (Opcional): Nível mínimo de RSSI (Received Signal Strength Indicator)
       # para o componente reportar que o dispositivo está presente [1, 3].
       # Um valor mais negativo significa sinal mais fraco. Ex: -80dB (padrão se não especificado) [1].
-      min_rssi: -75dB # Ajuste conforme a sensibilidade desejada.
+    #  min_rssi: -75dB # Ajuste conforme a sensibilidade desejada.
       # timeout (Opcional): O atraso após a última detecção do dispositivo
       # antes de publicar o estado de "não presente" [1, 3]. O padrão é 5 minutos [3].
-      timeout: 30s # Exemplo: Considerar "não presente" após 30 segundos sem detecção.
+    #  timeout: 30s # Exemplo: Considerar "não presente" após 30 segundos sem detecção.
+
+binary_sensor:
+  - platform: ble_presence
+    ibeacon_uuid: 'f8f664a0-da61-438e-81d6-121df307fde7'
+    name: "Celular Carla iBeacon"
+    ibeacon_major: 100
+    ibeacon_minor: 40004
+    timeout: 30s
 
     # --- Opções Alternativas de Rastreamento (escolha uma, não todas) ---
 
