@@ -11,7 +11,7 @@ logger:
 
 # Enable Home Assistant API
 api:
-  password: "Iot123456789*"
+  password: "Lh0I37zgHgWInmvVMzqy1eUfD4lsXqjiXJbNZ38Dw"
 
 ota:
   - platform: esphome
