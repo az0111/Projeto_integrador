@@ -4,14 +4,15 @@ esphome:
 esp32:
   board: vintlabs-devkit-v1
   framework:
-    type: esp-idf
+    type: arduino
 
 # Enable logging
 logger:
 
 # Enable Home Assistant API
-api:
-  password: "Lh0I37zgHgWInmvVMzqy1eUfD4lsXqjiXJbNZ38Dw"
+#api:
+ 
+ # password: "Iot123456789*"
 
 ota:
   - platform: esphome
@@ -94,8 +95,15 @@ sensor:
       # mac_address: Substitua pelo ENDEREÇO MAC REAL do seu celular [13].
       mac_address: 68:25:DD:47:C3:B4
       # name: Nome amigável para este sensor.
-      name: "RSSI Celular do Usuário"    
+      name: "RSSI Celular do Usuário"     
     
+
+# Example configuration entry
+mqtt:
+  broker: ad1c7c9839d6492fa6a68411630b0819.s1.eu.hivemq.cloud
+  port: 8883
+  username: carla
+  password: "Iot123456789*"
 
     # Example configuration.yaml entry
 #device_tracker:
